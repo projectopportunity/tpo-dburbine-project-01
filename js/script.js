@@ -72,8 +72,8 @@ function randomColorValue () {
 }
 
 //function to generate full RGB value
-function generateRGB (value) {
-  const color = `rgb( ${value()}, ${value()}, ${value()} )`
+function generateRGB () {
+  const color = `rgb( ${randomColorValue()}, ${randomColorValue()}, ${randomColorValue()} )`
   return color
 }
 
@@ -85,22 +85,22 @@ function printQuote(){
   let currentQuote = getRandomQuote()
 
   //var to store random rgb value
-  let currentRGB = generateRGB(randomColorValue)
+  let currentRGB = generateRGB()
 
   //store string of quote to be displayed
-  let html = `<p class = 'quote'> ${currentQuote.quote}  </p>`
-  html += `<p class = 'source'> ${currentQuote.source}`
+  let html = `<p class='quote'> ${currentQuote.quote}  </p>`
+  html += `<p class='source'> ${currentQuote.source}`
 
   //if statements to check if 'citation' or 'year' is present in the object selected
   if ('citation' in currentQuote){
-    html += `<span class = 'citation'> ${currentQuote.citation} </span>`
+    html += `<span class='citation'> ${currentQuote.citation} </span>`
   }
   if('year' in currentQuote){
-    html += `<span class = 'year'> ${currentQuote.year} </span>`
+    html += `<span class='year'> ${currentQuote.year} </span>`
   }
 
   //add final 'tag' class to string
-  html += `<span class = 'tag'> , ${currentQuote.tag.toUpperCase()} </span></p>`
+  html += `<span class='tag'> , ${currentQuote.tag.toUpperCase()} </span></p>`
 
 
   //insert string into html
