@@ -119,4 +119,5 @@ function printQuote(){
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
+//set timer to call printQuote every 10 seconds to generate new quote automatically
 setInterval(printQuote, 10000)
