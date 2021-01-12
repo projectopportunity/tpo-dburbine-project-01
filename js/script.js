@@ -77,9 +77,6 @@ function generateRGB (value) {
   return color
 }
 
-//initialize var for refresh
-let refresh
-
 /***
  * `printQuote` function
 ***/
@@ -111,13 +108,6 @@ function printQuote(){
 
   //set background color to the random value
   document.body.style.background = currentRGB
-
-  //clear existing timer
-  clearInterval(refresh)
-  
-  //set refresh to 10 second timer
-  refresh = setInterval(printQuote, 10000)
-
 }
 
 
@@ -128,3 +118,5 @@ function printQuote(){
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+setInterval(printQuote, 10000)
